@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.year2ca1.MainMenuController">
+    <MenuBar prefHeight="25.0" prefWidth="265.0" VBox.vgrow="NEVER">
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" onAction="#openImagePicker" text="Open image" />
+        </Menu>
+        <Menu mnemonicParsing="false" text="Image">
+            <MenuItem mnemonicParsing="false" onAction="#getImageInfo" text="Image info" />
+            <MenuItem mnemonicParsing="false" onAction="#greyscaleImage" text="Greyscale Image" />
+            <MenuItem mnemonicParsing="false" onAction="#openColourChannels" text="Colour channels" />
+        </Menu>
+        <Menu mnemonicParsing="false" text="Exit">
+            <MenuItem mnemonicParsing="false" onAction="#exitApplication" text="Exit" />
+        </Menu>
+    </MenuBar>
+    <AnchorPane prefHeight="427.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+        <Label layoutX="234.0" layoutY="2.0" text="Pill and capsule analyzer">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="origImage" fitHeight="288.0" fitWidth="303.0" layoutX="21.0" layoutY="27.0" onMouseClicked="#onImageClick" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="editedImage" fitHeight="288.0" fitWidth="303.0" layoutX="323.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
+        <Text layoutX="125.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Original image" />
+        <Text layoutX="436.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Other image" />
+        <Text fx:id="imageInfo" layoutX="21.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image info" />
+        <Slider fx:id="redValue" layoutX="486.0" layoutY="325.0" />
+        <Slider fx:id="greenValue" layoutX="486.0" layoutY="342.0" />
+        <Slider fx:id="blueValue" layoutX="486.0" layoutY="361.0" />
+        <Label layoutX="458.0" layoutY="334.0" text="RGB" />
+      <ImageView fx:id="overlayImageView" fitHeight="288.0" fitWidth="303.0" layoutX="21.0" layoutY="27.0" onMouseClicked="#onImageClick" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="boxCountText" layoutX="203.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estimated pill count" />
+    </AnchorPane>
+</VBox>
